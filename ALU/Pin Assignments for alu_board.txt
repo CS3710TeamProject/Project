@@ -1,0 +1,27 @@
+Pin Assignments for alu_board
+
+
+Switches:
+Register 1 Values: sw0, sw1, sw2, sw3
+	     PIN: AB12, AC12, AF9, AF10
+Register 2 Values: sw4, sw5, sw6, sw7
+	     PIN: AD11, AD12, AE11, AC9
+
+Push Buttons:
+Add - key2: Pin_W15
+Sub - key1: Pin_AA15
+Reset - key0: Pin_AA14
+
+LEDs:
+LED[7:0] for led_out[7:0]
+0-PIN_V16
+1-PIN_W16
+2-PIN_V17
+3-PIN_V18
+4-PIN_W17
+5-PIN_W19
+6-PIN_Y19
+7-PIN_W20
+
+Clock:
+CLOCK2_50 - Pin_AA16
