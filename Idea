@@ -1,5 +1,0 @@
-setting all registers to 0 at first
-....
-get the A register and B register value
-select the registers input value or immediate value using muxes
-pass them to the ALU and get the output
