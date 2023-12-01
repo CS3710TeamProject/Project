@@ -1,5 +1,5 @@
-# ALU_RF
+ECE-3710(Fall 2023) Air Hockey - Team Project, University of Utah
 
-ECE 3710: ALU/RegFile - Team Project, University of Utah
 
-Checkpoint for ALU and RegFile checkpoint of team project
+Simple air hockey game using VGA graphics and PS2 keyboard input for interface
+
