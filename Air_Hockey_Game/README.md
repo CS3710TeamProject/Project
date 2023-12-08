@@ -16,11 +16,12 @@ Instructions:
 
 File Description
 --------------------------
-*top_level.v --------> Top Level file for game inputs and outputs
-*ps2.v      ---------> Convert PS/2 keyboard inputs into usable output
-*bitGenTop.v --------> VGA bit generation control
-*bitGen.v    --------> VGA graphics pattern and collision logic
-*VGA_Controller.v  --> VGA graphics generation for 640x480 @ 60Hz
+Markup: - Files
+  - top_level.v --------> Top Level file for game inputs and outputs
+  - ps2.v      ---------> Convert PS/2 keyboard inputs into usable output
+  - bitGenTop.v --------> VGA bit generation control
+  - bitGen.v    --------> VGA graphics pattern and collision logic
+  - VGA_Controller.v  --> VGA graphics generation for 640x480 @ 60Hz
 
 
 
