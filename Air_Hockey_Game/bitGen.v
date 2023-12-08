@@ -271,13 +271,13 @@ module bitGen( input clk,
 		if(bright) begin
 			if(hCount < 640 && vCount < 480) begin
 				if(pad_on) begin
-					rgb_out_red = ON; 
-					rgb_out_green = ON; 
+					rgb_out_red = 8'b10100001; 
+					rgb_out_green = 8'b00000100; 
 					rgb_out_blue = OFF; 
 				end
 				else if(pad_on2) begin
-					rgb_out_red = ON; 
-					rgb_out_green = ON; 
+					rgb_out_red = 8'b10100001; 
+					rgb_out_green = 8'b00000100; 
 					rgb_out_blue = OFF; 	
 				end
 				else if(sq_on) begin
