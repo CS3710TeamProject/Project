@@ -1,7 +1,7 @@
-//bit gen from VGA lab
+
 // ECE 3710 - University of Utah, Fall 2023 - Ryan Ma
-// VGA: bitGen2
-// Using VGA specifications to produce a solid fill output to a VGA compatible monitor.
+// VGA: Bit Generation for pattern and Collision Calculations
+// Using VGA specifications to produce display objects and calculate collision detections.
 
 
 module bitGen( input clk,
@@ -68,9 +68,9 @@ module bitGen( input clk,
 	 
 	 
 	 ///ball items
-	 parameter SQUARE_SIZE = 10;             // width of square sides in pixels
-    parameter SQUARE_VELOCITY_POS = 2;      // set position change value for positive direction
-    parameter SQUARE_VELOCITY_NEG = -2;     // set position change value for negative direction  
+	 parameter SQUARE_SIZE = 11;             // width of square sides in pixels
+    parameter SQUARE_VELOCITY_POS = 1;      // set position change value for positive direction
+    parameter SQUARE_VELOCITY_NEG = -1;     // set position change value for negative direction  
 	
 	 // square boundaries and position
     wire [9:0] sq_x_l, sq_x_r;              // square left and right boundary

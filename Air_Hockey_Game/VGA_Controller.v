@@ -1,8 +1,8 @@
-//vga driver from vga lab
-//12/4/2023
-//RYan Ma
-// ECE 3710 - University of Utah, Fall 2023 - Ryan Ma
-// VGA: VGA_Controller
+
+// 12/4/2023
+// Ryan Ma
+// ECE 3710 - University of Utah, Fall 2023
+// VGA: VGA_Controller/Driver
 // Using VGA specifications to produce signal constraints for a 640x480 @60Hz resolution monitor display.
 
 

@@ -1,5 +1,6 @@
-//Top Level: vga + ps2 keyboard input to draw 2 bars/paddles
-
+// ECE 3710 - University of Utah, Fall 2023 - Ryan Ma
+// Top Level Signal Control/Connections
+// Top Level to connect keyboard inputs to VGA graphics processing for output onto display
 
 module top_level(input clk,
 			  input reset,

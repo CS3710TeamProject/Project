@@ -1,9 +1,8 @@
-//top level module for vga display from vga lab
 
 // ECE 3710 - University of Utah, Fall 2023 - Ryan Ma
 // VGA: bitGenTop
-// Top Level for bitGen to use bitGen and VGA Controller modules to create a solid color fill @ 640x480 resolution at 60Hz on a vga
-// compatible monitor.
+// Top Level for bitGen to use bitGen and VGA Controller modules to display air hockey game 
+// for 640x480 resolution at 60Hz on a vga compatible monitor.
 
 module bitGenTop(input clk, clear,
 					  input [7:0] key_in,

@@ -1,20 +1,16 @@
 // ECE 3710 - University of Utah, Fall 2023
 // Top-Level Module: PS2 controller for interface of Air Hockey Project
-//	Utilizes a 50MHz input system clock and Dell ps2 keyboard for keyboard clocka and data
-// toggles LED based on what key is being pressed.
+//	Utilizes a 50MHz input system clock and Dell ps2 keyboard for keyboard clock and data
+// Toggles LED based on what key is being pressed and sends signal out for use in bitGen logic
 
 
 module ps2 (
-				///////////////////KEYBOARD PINS////////////////////
-				input clock_key, 			//clock signal of the keyboard
-				input data_key,			//input data from keyboard
-				///////////////////FPGA PINS////////////////////////
-				input clock_fpga, 		//clock signal of fpga board – 50MHz
-				input reset,				//fills the shift register (SIPO) with 1’s
-				output [9:0] led,			//data output from keyboard
-				output [7:0] data_out	//data output from keyboard
-				//output new_code			//indicates that the data received from the keyboard is good 
-													//after the integrity of the signal is checked
+				input clock_key, 			//clock signal of keyboard
+				input data_key,			//input data of keyboard
+				input clock_fpga, 		//fpga clock – 50MHz
+				input reset,				//fills the shift register-SIPO
+				output [9:0] led,			//data output from keyboard to LED(for debug)
+				output [7:0] data_out	//data output from keyboard after decode
 				);
 				
 				
@@ -31,16 +27,11 @@ SIPO register(data_in, clock_interm, reset ,dout, count);
 xnor exclusive(out_xnor, dout[8], dout[7], dout[6], dout[5], dout[4], dout[3], dout[2], dout[1]);
 and si(out_and, out_xnor, dout[9], ok);
 verificare ver (clock_fpga, dout, ok, count);
-//latch_D_ck out(out_and, clock_fpga, new_code);
-
 
 //led output based on keyboard input
 led_out led_output(.data_in(data_out), .led_signal(led[9:0]));
 
-
 assign data_out = dout[8:1];
-//assign led = (new_code == 1) ? 1 : 0;
-
 
 endmodule 
 //----------------------------------------------------------
@@ -119,7 +110,7 @@ endmodule
 
 
 
-//----------------------------------------------
+//Latch to assign correct outputs
 module latch_D_ck (input D, 
 						input ck, 
 						output Q);
@@ -128,9 +119,8 @@ module latch_D_ck (input D,
 	
 endmodule
 
-
-//-------------------------------------------------------
-module SIPO ( //serial in, parallel out
+//serial in, parallel out shift register module
+module SIPO ( 
 			input 			din, 			//serial data in
 			input 			clk, 			//clock signal
 			input 			reset, 		//fills register with one's
@@ -138,7 +128,6 @@ module SIPO ( //serial in, parallel out
 			output [3:0] 	num			//counter for the number of shifts
 			);
 
-///////Internal registers/////////
 reg [10:0] data_out;
 reg [10:0]s;
 reg [3:0] count = 0;
@@ -162,7 +151,7 @@ always @ (negedge clk)
 			s[2] <= s[3];
 			s[1] <= s[2];
 			s[0] <= s[1];
-			///we count the number of times the register shifts until a full new code is in the register
+		//count the number of times the register shifts until a full new code is in the register
 			if (count < 11)
 				count <= count + 1;
 			else 
