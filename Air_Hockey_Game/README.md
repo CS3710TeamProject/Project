@@ -21,6 +21,6 @@ File Description
   - bitGenTop.v --------> VGA bit generation control
   - bitGen.v    --------> VGA graphics pattern and collision logic
   - VGA_Controller.v  --> VGA graphics generation for 640x480 @ 60Hz
-
+  - CSV File  ----------> Pinout configuration for use on FPGA DE1 SoC (Cyclone 5 hardware)
 
 
