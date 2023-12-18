@@ -8,7 +8,7 @@ Collaborators:
 - Jaiden Kazemini
 
 Directory:
-- ALU: Arithmetic Logic Unit + Register File components and test benches
+- ALU: Arithmetic Logic Unit + Register File components and test benches | Datapath and Memory components
 - Air_Hockey_Game: Demo program
 - FSM: Finite State Machine and Decoder components and test benches
 - PS2: PS/2 interface and decoder
